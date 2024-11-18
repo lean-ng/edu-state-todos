@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
-import { TodosItemComponent } from "../todos-item/todos-item.component";
+import { TodosMainComponent } from "../todos-main/todos-main.component";
+import { TodosActionbarComponent } from "../todos-actionbar/todos-actionbar.component";
+import { TodosInputComponent } from "../todos-input/todos-input.component";
 
 @Component({
   selector: 'todos-shell',
   standalone: true,
-  imports: [TodosItemComponent],
+  imports: [TodosMainComponent, TodosActionbarComponent, TodosInputComponent],
   templateUrl: './todos-shell.component.html',
   styles: ``
 })
