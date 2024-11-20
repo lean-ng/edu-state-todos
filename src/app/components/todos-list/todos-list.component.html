@@ -1,3 +1,5 @@
 <ul class="todo-list">
-  <todos-item />
+  @for (todo of todosSvc.todos(); track todo.id) {
+  <todos-item [todo]="todo" />
+  }
 </ul>

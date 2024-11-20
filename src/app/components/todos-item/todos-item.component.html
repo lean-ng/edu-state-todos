@@ -1,9 +1,17 @@
 <!-- List items should get the class `editing` when editing and `completed` when marked as completed -->
-<li class="completed">
+@let t = todo();
+<li [class]="{ completed: t.completed }">
   <div class="view">
-    <input class="toggle" type="checkbox" checked>
-    <span>Taste JavaScript</span>
-    <button class="destroy"><span class="sr-only">Destroy</span></button>
+    <input
+      (change)="todosSvc.toggleTodo(t.id)"
+      class="toggle"
+      type="checkbox"
+      [checked]="t.completed"
+    />
+    <span>{{ t.title }}</span>
+    <button (click)="todosSvc.destroyTodo(t.id)" class="destroy">
+      <span class="sr-only">Destroy</span>
+    </button>
   </div>
-  <input class="edit" value="Create a TodoMVC template">
+  <input class="edit" value="Create a TodoMVC template" />
 </li>

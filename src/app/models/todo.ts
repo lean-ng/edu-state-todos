@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/consistent-type-definitions */
 
 export type Todo = {
-  id: number | string;
+  id: number;
   title: string;
   completed: boolean;
-}
+};
